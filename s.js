@@ -27,7 +27,6 @@ window.onload = function() {
 };
 let playerPoint = 0
 let BotPoint = 0
-
 const gameMech = (player)=>{
     
     boob = ["Rock","Paper","Scissors"]
@@ -35,11 +34,23 @@ const gameMech = (player)=>{
     botMove = boob[randomNum]
     console.log(player)
     console.log(botMove);
-    playerLogo.src="resource/"+player+".png"
-    botLogo.src="resource/"+botMove+".png"
+    setTimeout(() => {
+        playerLogo.style.filter = "brightness(1)"
+        setTimeout(() => {
+            playerLogo.src="resource/"+player+".png"
+        }, 800);
+        setTimeout(() => {
+            botLogo.style.filter = "brightness(1)"
+            setTimeout(() => {
+                botLogo.src="resource/"+botMove+".png"
+            }, 800);
+        }, 2000);
+    }, 2000);
+
     setTimeout(() => {
         if(player == botMove){
             console.log("TIE");
+            
         }
         else if(player == "Rock"){
             if(botMove == "Paper"){
@@ -68,6 +79,8 @@ const gameMech = (player)=>{
         }
         playerLogo.src="resource/PlayerCard.png"
         botLogo.src="resource/BotCard.png"
+        playerLogo.style.filter = "brightness(0.4)"
+        botLogo.style.filter = "brightness(0.4)"
         playerP.innerHTML = "Player: "+playerPoint
         roboP.innerHTML = "JIM: "+BotPoint
 
@@ -77,7 +90,7 @@ const gameMech = (player)=>{
         scissors.style.transform = "rotateZ(30deg) translate(105px, 40px)"
         scissors.style.marginTop = "0";
 
-    }, 3000);
+    }, 7000);
     
 }
 
