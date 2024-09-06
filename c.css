@@ -73,6 +73,7 @@ body::-webkit-scrollbar{
 }
 .cardHolder > img{
     width: 40%;
+    transition: 0.5S;
     filter: brightness(0.4);
 }
 #player{
