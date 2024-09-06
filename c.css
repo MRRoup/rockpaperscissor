@@ -98,12 +98,16 @@ body::-webkit-scrollbar{
 }
 #hands > .cards{
     position: fixed;
-    transition: 1s linear;
+    transition: 0.5s linear;
     cursor: pointer;
     border: 10px solid;
     border-radius: 30px;
     width: 13vw;
     height: 27vh;
+    filter: opacity(0.6);
+}
+#hands > .cards:hover{
+    filter:opacity(1)
 }
 #hands > #rock{
     margin-left: -4vw;
