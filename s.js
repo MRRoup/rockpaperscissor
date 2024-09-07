@@ -1,3 +1,33 @@
+const favicons = [  
+    'resource/Rock.png',  
+    'resource/Paper.png',  
+    'resource/Scissors.png'  
+]; 
+const names = ["Rock", "Paper", "Scissors"] 
+
+let currentIndex = 0;  
+
+function changeFavicon() {  
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');  
+    link.type = 'image/x-icon';  
+    link.rel = 'icon';  
+    link.href = favicons[currentIndex];  
+
+    if (!link.parentNode) {  
+        document.head.appendChild(link);  
+    } else {  
+        link.href = favicons[currentIndex]; // Update the href to refresh the favicon 
+        tit.innerHTML = names[currentIndex]
+    }  
+
+    currentIndex = (currentIndex + 1) % favicons.length; // Cycle through the favicons  
+}  
+
+// Change favicon every 5 seconds (5000 milliseconds)  
+setInterval(changeFavicon, 4000);
+
+
+
 window.onload = function() {  
     setTimeout(() => {
         body.style.background = "rgb(255 237 43)"
